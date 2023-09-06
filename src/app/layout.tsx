@@ -1,3 +1,4 @@
+import Header from '@/components/Header/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Ysabeau } from 'next/font/google'
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk">
-      <body className={ysabeau.className}>{children}</body>
+      <body className={ysabeau.className}>
+        <Header />
+        {children}</body>
     </html>
   )
 }
