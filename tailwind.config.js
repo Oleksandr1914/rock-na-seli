@@ -12,7 +12,7 @@ module.exports = {
       textColor: "#e2e8f0",
       burgerColor: "#f1f5f9",
       backgroundBurger: "#18181b",
-      activeLink: "#7f1d1d",
+      activeLink: " #ea580c",
       hoverColor: "#fb923c",
     },
     screens: {

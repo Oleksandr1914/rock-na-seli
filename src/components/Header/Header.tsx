@@ -1,0 +1,20 @@
+import Image from "next/image";
+import Link from "next/link";
+import Links from "../Links/Links";
+import Logo from '../../../public/logo.png';
+
+export default function Header(): JSX.Element {
+    return (
+        <header className="relative flex flex-row justify-between px-5 py-2 items-center mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:py-4 laptop:w-[1024px] leptop:px-10 laptop:py-5 desktop:w-[1280px] desktop:px-14">
+            <Link href='/'>
+                <Image src={Logo} alt="logo" className="w-40 mobile:w-48 laptop:w-56 desktop:w-64" priority />
+            </Link>
+            <ul className='hidden laptop:flex laptop:flex-row laptop:gap-7 laptop:ml-auto desktop:gap-10'>
+                <li><Links href='/' size="s" >ГОЛОВНА</Links></li>
+                <li><Links href='/group' size="s" >ДЛЯ ГУРТІВ</Links></li>
+                <li><Links href='/gallery' size="s" >ГАЛЕРЕЯ</Links></li>
+                <li><Links href='/contacts' size="s" >КОНТАКТИ</Links></li>
+            </ul>
+        </header>
+    )
+}
