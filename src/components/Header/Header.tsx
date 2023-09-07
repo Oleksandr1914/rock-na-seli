@@ -30,7 +30,6 @@ export default function Header(): JSX.Element {
                         <li><Links href='/contacts' > <SheetClose > КОНТАКТИ </SheetClose></Links></li>
 
                     </ul>
-
                 </SheetContent>
             </Sheet>
             <ul className='hidden laptop:flex laptop:flex-row laptop:gap-7 laptop:ml-auto desktop:gap-10'>
