@@ -34,10 +34,10 @@ export default function Header(): JSX.Element {
                 </SheetContent>
             </Sheet>
             <ul className='hidden laptop:flex laptop:flex-row laptop:gap-7 laptop:ml-auto desktop:gap-10'>
-                <li ><Links href='/' size="s" >ГОЛОВНА</Links></li>
-                <li><Links href='/group' size="s" >ДЛЯ ГУРТІВ</Links></li>
-                <li><Links href='/gallery' size="s" >ГАЛЕРЕЯ</Links></li>
-                <li><Links href='/contacts' size="s" >КОНТАКТИ</Links></li>
+                <li ><Links href='/'  >ГОЛОВНА</Links></li>
+                <li><Links href='/group'  >ДЛЯ ГУРТІВ</Links></li>
+                <li><Links href='/gallery'  >ГАЛЕРЕЯ</Links></li>
+                <li><Links href='/contacts'  >КОНТАКТИ</Links></li>
             </ul>
         </header >
     )
