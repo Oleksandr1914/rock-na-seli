@@ -2,6 +2,7 @@ import Header from '@/components/Header/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Ysabeau } from 'next/font/google'
+import { Providers } from '@/store/provider'
 
 const ysabeau = Ysabeau({ subsets: ['cyrillic'] })
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     <html lang="uk">
       <body className={ysabeau.className}>
         <Header />
-        {children}</body>
+        <Providers >
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }

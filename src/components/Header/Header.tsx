@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Links from "../Links/Links";
 import Logo from '../../../public/logo.png';
 import {
@@ -9,6 +8,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
 
 
 export default function Header(): JSX.Element {
