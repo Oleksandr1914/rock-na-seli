@@ -1,10 +1,15 @@
 "use client"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react";
 
 
 export default function Gallery() {
     const route = useRouter();
-    route.push('/gallery/EighteenYear')
+
+    useEffect(() => {
+        route.push('/gallery/EighteenYear')
+
+    }, [])
 
     return (
         <div>Gallery</div>
