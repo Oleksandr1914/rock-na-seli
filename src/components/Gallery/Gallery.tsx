@@ -9,6 +9,7 @@ import "yet-another-react-lightbox/styles.css";
 
 
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import NextJsImage from "./NextJsImage";
 
 
 export default function Gallery({ children, year }: PGallery): JSX.Element {
@@ -63,6 +64,7 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
                 slides={photos}
                 open={index >= 0}
                 index={index}
+                render={{ slide: NextJsImage }}
                 close={() => setIndex(-1)}
             />
         </>
