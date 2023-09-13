@@ -10,5 +10,4 @@ export type PhotosType = {
   src: string;
   width: number;
   height: number;
-  id: string;
 };

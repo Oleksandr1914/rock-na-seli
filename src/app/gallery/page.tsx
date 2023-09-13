@@ -8,7 +8,6 @@ export default function Gallery() {
 
     useEffect(() => {
         route.push('/gallery/EighteenYear')
-
     }, [])
 
     return (
