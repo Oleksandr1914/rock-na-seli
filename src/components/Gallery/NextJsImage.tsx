@@ -15,10 +15,7 @@ function isNextJsImage(slide: Slide): slide is StaticImageData {
     );
 }
 
-/*
- * For JavaScript version of this sandbox please visit
- * https://codesandbox.io/p/sandbox/yet-another-react-lightbox-nextjs-bfjgb0?file=%2Fpages%2Findex.jsx
- */
+
 export default function NextJsImage({
     slide,
     rect,
@@ -46,7 +43,7 @@ export default function NextJsImage({
                 fill
                 alt=""
                 src={slide}
-                loading="eager"
+                loading="lazy"
                 draggable={false}
                 placeholder={slide.blurDataURL ? "blur" : undefined}
                 style={{ objectFit: cover ? "cover" : "contain" }}
