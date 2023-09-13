@@ -3,13 +3,22 @@ import { useAppDispatch, useAppSelector } from "@/hook/hookStore";
 import { PGallery, PhotosType } from "./Gallery.props";
 import { useEffect, useState } from "react";
 import { fetchEighteenList, fetchNineteenthList, fetchTwentyFirstList } from "@/store/Gallery/galleryOperation";
-import Image from "next/image";
+import PhotoAlbum from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 
 export default function Gallery({ children, year }: PGallery): JSX.Element {
     const { TwentyFirstList, NineteenthList, EighteenList, loading } = useAppSelector(state => state.rock)
     const dispatch = useAppDispatch();
     const [photos, setPhotos] = useState<PhotosType[]>([])
+    const [index, setIndex] = useState(-1);
 
     useEffect(() => {
         if (year === 'EighteenList') {
@@ -30,15 +39,15 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
 
         if (year === 'EighteenList') {
             newArray = EighteenList?.map(el => {
-                return { src: el.secure_url, width: el.width, height: el.height, id: el.asset_id };
+                return { src: el.secure_url, width: el.width, height: el.height };
             })
         } else if (year === 'NineteenthList') {
             newArray = NineteenthList?.map(el => {
-                return { src: el.secure_url, width: el.width, height: el.height, id: el.asset_id };
+                return { src: el.secure_url, width: el.width, height: el.height };
             })
         } else if (year === 'TwentyFirstList') {
             newArray = TwentyFirstList?.map(el => {
-                return { src: el.secure_url, width: el.width, height: el.height, id: el.asset_id };
+                return { src: el.secure_url, width: el.width, height: el.height };
             })
         }
         setPhotos(newArray)
@@ -46,20 +55,23 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
     }, [EighteenList, NineteenthList, TwentyFirstList])
 
 
-    return <ul className="flex flex-wrap gap-3">
-        {photos?.map(el => {
-            return <li key={el.id}>
-                <Image
-                    src={el.src}
-                    alt="rock concert"
-                    width="200"
-                    height="200"
-
-                    priority={true}
-                />
-            </li>
-        })}
-    </ul>
+    return <section className="py-6 tablet:pt-8 laptop:pt-11">
+        < >
+            <PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
+                if (containerWidth < 484) return 2;
+                if (containerWidth < 800) return 3;
+                return 4;
+            }} onClick={({ index }) => setIndex(index)} />
+            <Lightbox
+                slides={photos}
+                open={index >= 0}
+                index={index}
+                close={() => setIndex(-1)}
+                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                thumbnails={{ border: 0 }}
+            />
+        </>
+    </section>
 }
 
 
