@@ -12,6 +12,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import NextJsImage from "./NextJsImage";
+import { Bars } from 'react-loader-spinner'
 
 
 export default function Gallery({ children, year }: PGallery): JSX.Element {
@@ -52,21 +53,29 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
 
 
     return <section className="py-6 tablet:pt-8 laptop:pt-11">
-        < >
-            <PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
-                if (containerWidth < 484) return 2;
-                if (containerWidth < 800) return 3;
-                return 4;
-            }} onClick={({ index }) => setIndex(index)} />
-            <Lightbox
-                slides={photos}
-                open={index >= 0}
-                index={index}
-                render={{ slide: NextJsImage }}
-                close={() => setIndex(-1)}
-                plugins={[Fullscreen, Slideshow, Zoom]}
-            />
-        </>
+        {loading ? <div className="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"> <Bars
+            height="140"
+            width="140"
+            color="#ea580c"
+            ariaLabel="bars-loading"
+            visible={true}
+        /> </div> :
+            < >
+                <PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
+                    if (containerWidth < 484) return 2;
+                    if (containerWidth < 800) return 3;
+                    return 4;
+                }} onClick={({ index }) => setIndex(index)} />
+                <Lightbox
+                    slides={photos}
+                    open={index >= 0}
+                    index={index}
+                    render={{ slide: NextJsImage }}
+                    close={() => setIndex(-1)}
+                    plugins={[Fullscreen, Slideshow, Zoom]}
+                />
+            </>
+        }
     </section>
 }
 

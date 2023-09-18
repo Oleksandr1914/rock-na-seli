@@ -29,6 +29,9 @@ module.exports = {
       },
     },
     extend: {
+      translate: {
+        50: "-50%",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
