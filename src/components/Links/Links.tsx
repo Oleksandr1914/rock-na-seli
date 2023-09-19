@@ -13,7 +13,7 @@ export default function Links({ children, href, size = 'm' }: PLink): JSX.Elemen
     const segment = useSelectedLayoutSegment()
 
     let className = '';
-    size === "m" ? className = 'font-medium text-xl tracking-wider desktop:text-2xl' : className = 'font-normal text-lg tracking-wide mobile:text-xl mobile:tracking-wider'
+    size === "m" ? className = 'font-medium text-xl tracking-wider desktop:text-2xl hover:text-hoverColor focus:text-hoverColor hover:transition-all' : className = 'font-normal text-lg tracking-wide mobile:text-xl mobile:tracking-widerhover:text-hoverColor focus:text-hoverColor hover:transition-all'
 
 
     useEffect(() => {
