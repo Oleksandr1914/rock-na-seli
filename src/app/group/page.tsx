@@ -1,7 +1,10 @@
-
+import FormComponent from "@/components/FormCompoment/FormComponent";
 
 export default function Group() {
+
     return (
-        <div>Group</div>
+        <section>
+            <FormComponent />
+        </section>
     )
 }
