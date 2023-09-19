@@ -56,7 +56,7 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
         {loading ? <div className="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"> <Bars
             height="140"
             width="140"
-            color="#ea580c"
+            color="#ea580cbd"
             ariaLabel="bars-loading"
             visible={true}
         /> </div> :
