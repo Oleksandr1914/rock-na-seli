@@ -12,6 +12,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 
 const Form = FormProvider
 
@@ -78,7 +79,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn(className)} {...props} />
+      <div ref={ref} className={cn('relative', className)} {...props} />
     </FormItemContext.Provider>
   )
 })
@@ -93,13 +94,55 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn(error && "text-errorColor", className)}
+      className={cn(error, className)}
       htmlFor={formItemId}
       {...props}
     />
   )
 })
 FormLabel.displayName = "FormLabel"
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> { }
+
+const FormInput = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    const { error, formItemId } = useFormField()
+    return (
+      <Input
+        type={type}
+        className={cn(error && 'text-errorColor',
+          "flex h-10 w-full rounded-md border bg-backgroundMain px-3 py-2 text-sm  disabled:cursor-not-allowed  disabled:opacity-50 outline-outlineColor outline-1 tablet:text-base",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+FormInput.displayName = "FormInput"
+
+
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
+
+const FormTextarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, ...props }, ref) => {
+    const { error, formItemId } = useFormField()
+    return (
+      <textarea
+        className={cn(error && 'text-errorColor',
+          "flex min-h-[80px] w-full rounded-md border border-slate-200 bg-backgroundMain px-3 py-2 text-sm ring-offset-white  disabled:opacity-50  outline-outlineColor outline-1 tablet:text-base",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+FormTextarea.displayName = "FormTextarea"
 
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
@@ -123,23 +166,6 @@ const FormControl = React.forwardRef<
 })
 FormControl.displayName = "FormControl"
 
-// const FormDescription = React.forwardRef<
-//   HTMLParagraphElement,
-//   React.HTMLAttributes<HTMLParagraphElement>
-// >(({ className, ...props }, ref) => {
-//   const { formDescriptionId } = useFormField()
-
-//   return (
-//     <p
-//       ref={ref}
-//       id={formDescriptionId}
-//       className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
-//       {...props}
-//     />
-//   )
-// })
-// FormDescription.displayName = "FormDescription"
-
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -155,7 +181,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-errorColor", className)}
+      className={cn("absolute text-sm font-medium text-errorColor", className)}
       {...props}
     >
       {body}
@@ -168,9 +194,10 @@ export {
   useFormField,
   Form,
   FormItem,
+  FormInput,
   FormLabel,
   FormControl,
-  // FormDescription,
+  FormTextarea,
   FormMessage,
   FormField,
 }
