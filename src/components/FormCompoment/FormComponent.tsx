@@ -14,7 +14,7 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import Button from "../Button/Button"
-import { Textarea } from "../ui/textarea"
+import Notiflix from 'notiflix';
 
 const formSchema = z.object({
     email: z.string().email({ message: "Невірна адреса електронної пошти" }).min(5, {
@@ -62,6 +62,11 @@ export default function FormComponent() {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
+        Notiflix.Notify.success(`${values.bandName} - Ваша реєстрація не участь у фустивалі відправлена, ми Вам зателефонуємо.`, {
+            timeout: 6000,
+        },);
+        form.reset()
+
     }
 
     return (
