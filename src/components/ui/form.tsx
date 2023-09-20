@@ -78,7 +78,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn(className)} {...props} />
     </FormItemContext.Provider>
   )
 })
@@ -93,7 +93,7 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn(error && "text-red-500 dark:text-red-900", className)}
+      className={cn(error && "text-errorColor", className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -123,22 +123,22 @@ const FormControl = React.forwardRef<
 })
 FormControl.displayName = "FormControl"
 
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
+// const FormDescription = React.forwardRef<
+//   HTMLParagraphElement,
+//   React.HTMLAttributes<HTMLParagraphElement>
+// >(({ className, ...props }, ref) => {
+//   const { formDescriptionId } = useFormField()
 
-  return (
-    <p
-      ref={ref}
-      id={formDescriptionId}
-      className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
-      {...props}
-    />
-  )
-})
-FormDescription.displayName = "FormDescription"
+//   return (
+//     <p
+//       ref={ref}
+//       id={formDescriptionId}
+//       className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
+//       {...props}
+//     />
+//   )
+// })
+// FormDescription.displayName = "FormDescription"
 
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
@@ -155,7 +155,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-red-500 dark:text-red-900", className)}
+      className={cn("text-sm font-medium text-errorColor", className)}
       {...props}
     >
       {body}
@@ -170,7 +170,7 @@ export {
   FormItem,
   FormLabel,
   FormControl,
-  FormDescription,
+  // FormDescription,
   FormMessage,
   FormField,
 }
