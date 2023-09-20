@@ -16,6 +16,8 @@ module.exports = {
       activeLink: " #ea580c",
       hoverColor: "#fb923c",
       buttonColor: "#d04802",
+      errorColor: "#ec291c",
+      outlineColor: "#909294",
     },
     screens: {
       mobile: "480px",
