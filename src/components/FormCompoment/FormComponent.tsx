@@ -8,35 +8,36 @@ import {
     FormControl,
     FormField,
     FormItem,
+    FormInput,
+    FormTextarea,
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
 import Button from "../Button/Button"
 import { Textarea } from "../ui/textarea"
 
 const formSchema = z.object({
     email: z.string().email({ message: "Невірна адреса електронної пошти" }).min(5, {
-        message: "Email - повинно бути не менше 5 символів.",
+        message: "Повинно бути не менше 5 символів.",
     }),
     bandName: z.string().min(2, {
-        message: "Назва гурту - повинно бути не менше 2 символів.",
+        message: "Повинно бути не менше 2 символів.",
     }),
     contactPersonName: z.string().min(2, {
-        message: "Контактна особа - повинно бути не менше 2 символів.",
+        message: "Повинно бути не менше 2 символів.",
     }),
     address: z.string().min(3, {
-        message: "Населений пункт - повинно бути не менше 3 символів.",
+        message: "Повинно бути не менше 3 символів.",
     }),
     phone: z.string().refine((value) => /^\+380\s?(\(\d{2,3}\)|\d{2,3})[-.\s]?\d{2,3}[-.\s]?\d{2}[-.\s]?\d{2}$/.test(value), 'Невірно введений номер телефону'),
     styleGroup: z.string().min(3, {
-        message: "Стиль гурту - повинно бути не менше 3 символів.",
+        message: "Повинно бути не менше 3 символів.",
     }),
     listOfInstrumentalBend: z.string().min(5, {
-        message: "Кількість учасників гурту - повинно бути не менше 5 символів.",
+        message: "Повинно бути не менше 5 символів.",
     }),
     informationGroup: z.string().min(10, {
-        message: "Інформація про гурт - повинно бути не менше 10 символів.",
+        message: "Повинно бути не менше 10 символів.",
     }),
     linksSocialNetworkPage: z.string(),
     linksToBandVideo: z.string(),
@@ -65,15 +66,15 @@ export default function FormComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 py-6 px-4 border rounded-md">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 py-6 px-4 border rounded-md  tablet:flex-row tablet:flex-wrap tablet:items-end tablet:justify-between tablet:gap-y-8 laptop:gap-x-7  desktop:py-8 ">
                 <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="rock@ukr.net" className="mt-2" {...field} />
+                                <FormInput placeholder="rock@ukr.net" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -83,10 +84,10 @@ export default function FormComponent() {
                     control={form.control}
                     name="bandName"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Назва гурту</FormLabel>
                             <FormControl>
-                                <Input placeholder="Ромашки" className="mt-2" {...field} />
+                                <FormInput placeholder="Ромашки" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -96,10 +97,10 @@ export default function FormComponent() {
                     control={form.control}
                     name="address"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Населений пункт</FormLabel>
                             <FormControl>
-                                <Input placeholder="Київ" className="mt-2 text-textColor" {...field} />
+                                <FormInput placeholder="Київ" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -109,10 +110,10 @@ export default function FormComponent() {
                     control={form.control}
                     name="contactPersonName"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Контактна особа</FormLabel>
                             <FormControl>
-                                <Input placeholder="Олександр" className="mt-2" {...field} />
+                                <FormInput placeholder="Олександр" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -122,10 +123,10 @@ export default function FormComponent() {
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Номер телефону</FormLabel>
                             <FormControl>
-                                <Input placeholder="+380980000000" className="mt-2" {...field} />
+                                <FormInput placeholder="+380980000000" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -135,10 +136,10 @@ export default function FormComponent() {
                     control={form.control}
                     name="styleGroup"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Стиль у якому грає гурт</FormLabel>
                             <FormControl>
-                                <Input placeholder="Панк-рок" className="mt-2" {...field} />
+                                <FormInput placeholder="Панк-рок" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -148,11 +149,11 @@ export default function FormComponent() {
                     control={form.control}
                     name="listOfInstrumentalBend"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[530px]">
                             <FormLabel>Кількість учасників гурту, перелік інструментального складу
                             </FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Гітара, бас, барабани." className="mt-2" {...field} />
+                                <FormTextarea placeholder="Гітара, бас, барабани." className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -162,11 +163,11 @@ export default function FormComponent() {
                     control={form.control}
                     name="informationGroup"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[530px]">
                             <FormLabel>Коротка інформація про гурт
                             </FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Коли заснований, особисті досягнення і т.д." className="mt-2" {...field} />
+                                <FormTextarea placeholder="Коли заснований, особисті досягнення і т.д." className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -176,11 +177,11 @@ export default function FormComponent() {
                     control={form.control}
                     name="linksSocialNetworkPage"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[530px]">
                             <FormLabel>Посилання на сторінки соціальних мереж, youtube каналів, сайту гурту
                             </FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Додавати позиції за наявності" className="mt-2" {...field} />
+                                <FormTextarea placeholder="Додавати позиції за наявності" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -190,11 +191,11 @@ export default function FormComponent() {
                     control={form.control}
                     name="linksToBandVideo"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[530px]">
                             <FormLabel>Посилання на відеозаписи гурту (вітається live-відео!)
                             </FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Додавати позиції за наявності" className="mt-2" {...field} />
+                                <FormTextarea placeholder="Додавати позиції за наявності" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
