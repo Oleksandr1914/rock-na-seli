@@ -15,6 +15,9 @@ import {
 } from "@/components/ui/form"
 import Button from "../Button/Button"
 import Notiflix from 'notiflix';
+import { useAppDispatch, useAppSelector } from "@/hook/hookStore"
+import { addRegistrationGroup } from "@/store/GroupStore/groupOperation"
+import { useEffect, useState } from "react"
 
 const formSchema = z.object({
     email: z.string().email({ message: "Невірна адреса електронної пошти" }).min(5, {
@@ -44,6 +47,10 @@ const formSchema = z.object({
 })
 
 export default function FormComponent() {
+    const [band, setBand] = useState('');
+    const { response, error } = useAppSelector(state => state.rock.group)
+    const dispatch = useAppDispatch();
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -61,13 +68,22 @@ export default function FormComponent() {
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
-        Notiflix.Notify.success(`${values.bandName} - Ваша реєстрація не участь у фустивалі відправлена, ми Вам зателефонуємо.`, {
-            timeout: 6000,
-        },);
+        dispatch(addRegistrationGroup(values))
+
+        setBand(values.bandName)
+
         form.reset()
 
     }
+
+    useEffect(() => {
+        response && Notiflix.Notify.success(`${band} - Ваша реєстрація не участь у фустивалі відправлена, ми Вам зателефонуємо.`, {
+            timeout: 6000,
+        },);
+        error && Notiflix.Notify.failure(`${band} - Під час реєстрації сталася помилка  спробуйте ще раз.`, {
+            timeout: 6000,
+        },);
+    }, [response, error])
 
     return (
         <Form {...form}>
