@@ -1,9 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import galleryReducer from "./Gallery/gallerySlice";
+import groupReducer from "./GroupStore/groupSlice";
+
+const rockReducer = combineReducers({
+  gallery: galleryReducer,
+  group: groupReducer,
+});
 
 const store = configureStore({
   reducer: {
-    rock: galleryReducer,
+    rock: rockReducer,
   },
 });
 

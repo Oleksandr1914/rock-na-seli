@@ -16,7 +16,7 @@ import { Bars } from 'react-loader-spinner'
 
 
 export default function Gallery({ children, year }: PGallery): JSX.Element {
-    const { TwentyFirstList, NineteenthList, EighteenList, loading } = useAppSelector(state => state.rock)
+    const { TwentyFirstList, NineteenthList, EighteenList, loading } = useAppSelector(state => state.rock.gallery)
     const dispatch = useAppDispatch();
     const [photos, setPhotos] = useState<PhotosType[]>([])
     const [index, setIndex] = useState(-1);
