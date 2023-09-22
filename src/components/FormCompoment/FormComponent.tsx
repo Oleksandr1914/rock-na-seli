@@ -174,7 +174,7 @@ export default function FormComponent() {
                             <FormLabel>Кількість учасників гурту, перелік інструментального складу
                             </FormLabel>
                             <FormControl>
-                                <FormTextarea placeholder="Гітара, бас, барабани." className="mt-2 " {...field} />
+                                <FormTextarea placeholder="Гітара, бас-гітара, барабани..." className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -229,4 +229,3 @@ export default function FormComponent() {
     )
 }
 
-// Форма заявки для участі у фестивалі 'Rock на селі'
