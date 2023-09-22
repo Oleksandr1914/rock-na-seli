@@ -77,11 +77,11 @@ export default function FormComponent() {
     }
 
     useEffect(() => {
-        response && Notiflix.Notify.success(`${band} - Ваша реєстрація не участь у фустивалі відправлена, ми Вам зателефонуємо.`, {
+        response && Notiflix.Notify.success(`${band} - Ваша реєстрація на участь у фестивалі відправлена, ми з Вами зв'яжемся.`, {
             timeout: 6000,
         },);
         error && Notiflix.Notify.failure(`${band} - Під час реєстрації сталася помилка  спробуйте ще раз.`, {
-            timeout: 6000,
+            timeout: 7000,
         },);
     }, [response, error])
 
@@ -202,7 +202,7 @@ export default function FormComponent() {
                             <FormLabel>Посилання на сторінки соціальних мереж, youtube каналів, сайту гурту
                             </FormLabel>
                             <FormControl>
-                                <FormTextarea placeholder="Додавати позиції за наявності" className="mt-2 " {...field} />
+                                <FormTextarea placeholder="Додати посилання" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -216,7 +216,7 @@ export default function FormComponent() {
                             <FormLabel>Посилання на відеозаписи гурту (вітається live-відео!)
                             </FormLabel>
                             <FormControl>
-                                <FormTextarea placeholder="Додавати позиції за наявності" className="mt-2 " {...field} />
+                                <FormTextarea placeholder="Додати посилання" className="mt-2 " {...field} />
                             </FormControl>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
@@ -229,3 +229,5 @@ export default function FormComponent() {
     )
 
 }
+
+// Форма заявки для участі у фестивалі 'Rock на селі'
