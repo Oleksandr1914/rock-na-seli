@@ -18,7 +18,6 @@ export const addRegistrationGroup = createAsyncThunk<
         },
       }
     );
-
     if (!response.ok) {
       return rejectWithValue("Server Error!");
     }

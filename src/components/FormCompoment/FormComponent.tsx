@@ -227,7 +227,6 @@ export default function FormComponent() {
             </form>
         </Form>
     )
-
 }
 
 // Форма заявки для участі у фестивалі 'Rock на селі'

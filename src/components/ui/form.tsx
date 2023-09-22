@@ -111,7 +111,7 @@ const FormInput = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <Input
         type={type}
-        className={cn(error && 'text-errorColor',
+        className={cn(error && 'border-errorColor',
           "flex h-10 w-full rounded-md border bg-backgroundMain px-3 py-2 text-sm  disabled:cursor-not-allowed  disabled:opacity-50 outline-outlineColor outline-1 tablet:text-base",
           className
         )}
@@ -132,7 +132,7 @@ const FormTextarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const { error, formItemId } = useFormField()
     return (
       <textarea
-        className={cn(error && 'text-errorColor',
+        className={cn(error && 'border-errorColor',
           "flex min-h-[80px] w-full rounded-md border border-slate-200 bg-backgroundMain px-3 py-2 text-sm ring-offset-white  disabled:opacity-50  outline-outlineColor outline-1 tablet:text-base",
           className
         )}
