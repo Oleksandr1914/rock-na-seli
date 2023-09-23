@@ -19,6 +19,8 @@ import { useAppDispatch, useAppSelector } from "@/hook/hookStore"
 import { addRegistrationGroup } from "@/store/GroupStore/groupOperation"
 import { useEffect, useState } from "react"
 
+
+
 const formSchema = z.object({
     email: z.string().email({ message: "Невірна адреса електронної пошти" }).min(5, {
         message: "Повинно бути не менше 5 символів.",
@@ -77,6 +79,8 @@ export default function FormComponent() {
     }
 
     useEffect(() => {
+
+
         response && Notiflix.Notify.success(`${band} - Ваша реєстрація на участь у фестивалі відправлена, ми з Вами зв'яжемся.`, {
             timeout: 6000,
         },);
