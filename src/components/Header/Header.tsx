@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet"
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
-import { FaFacebook } from "react-icons/fa6";
+import { FaFacebook, FaYoutube } from "react-icons/fa6";
 
 
 export default function Header(): JSX.Element {
@@ -42,7 +42,7 @@ export default function Header(): JSX.Element {
                         ><SheetClose >Instagram</SheetClose></a></li>
                         <li><a href="https://www.youtube.com/@rock6351" target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
-                        ><SheetClose >You Tube</SheetClose></a></li>
+                        ><SheetClose ><FaYoutube /></SheetClose></a></li>
                         <li><a href="mailto:rocknaseli@ukr.net"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
                         ><SheetClose >rocknaseli@ukr.net</SheetClose></a></li>
