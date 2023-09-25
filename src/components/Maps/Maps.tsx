@@ -23,6 +23,7 @@ export const GoogleMap = async () => {
             bootstrapURLKeys={{ key: `${process.env.NEXT_PUBLIC_MAP}` }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
+            yesIWantToUseGoogleMapApiInternals
         >
 
             <AnyReactComponent
