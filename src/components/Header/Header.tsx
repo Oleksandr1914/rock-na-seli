@@ -30,19 +30,22 @@ export default function Header(): JSX.Element {
                         <li><Links href='/gallery' > <SheetClose > ГАЛЕРЕЯ </SheetClose></Links></li>
                         <li><Links href='/contacts' > <SheetClose > КОНТАКТИ </SheetClose></Links></li>
                     </ul>
-                    <ul className="flex flex-col items-center gap-4 pt-20 bg-black "                >
+                    <ul className="flex items-center justify-center gap-6 mt-32 bg-black "                >
                         <li><a href="https://www.facebook.com/groups/173982049938109/user/100063204370759/"
                             target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
-                        ><SheetClose><FaFacebook /></SheetClose></a></li>
+                        ><SheetClose><FaFacebook className='w-6 h-6' /></SheetClose></a></li>
 
                         <li><a href="https://www.instagram.com/rocknaseli/"
                             target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
-                        ><SheetClose >Instagram</SheetClose></a></li>
+                        ><SheetClose ><FaInstagram className='w-6 h-6' /></SheetClose></a></li>
                         <li><a href="https://www.youtube.com/@rock6351" target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
-                        ><SheetClose ><FaYoutube /></SheetClose></a></li>
+                        ><SheetClose ><FaYoutube className='w-6 h-6' /></SheetClose></a></li>
+                    </ul>
+                    <ul className="flex flex-col items-center gap-4 mt-4 bg-black "                >
+
                         <li><a href="mailto:rocknaseli@ukr.net"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
                         ><SheetClose >rocknaseli@ukr.net</SheetClose></a></li>
@@ -50,6 +53,7 @@ export default function Header(): JSX.Element {
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
                         ><SheetClose >+38067-325-74-03</SheetClose></a></li>
                     </ul>
+
                 </SheetContent>
             </Sheet>
             <ul className='hidden laptop:flex laptop:flex-row laptop:gap-7 laptop:ml-auto desktop:gap-10'>
