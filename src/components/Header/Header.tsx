@@ -23,14 +23,14 @@ export default function Header(): JSX.Element {
                 <SheetTrigger className="laptop:hidden">
                     <RxHamburgerMenu className='h-8 w-8' />
                 </SheetTrigger>
-                <SheetContent className="bg-black">
-                    <ul className="flex flex-col items-center gap-4 pt-20 bg-black ">
+                <SheetContent className="bg-backgroundBurger">
+                    <ul className="flex flex-col items-center gap-4 pt-20  ">
                         <li ><Links href='/' > <SheetClose > ГОЛОВНА </SheetClose></Links></li>
                         <li><Links href='/group' > <SheetClose > ДЛЯ ГУРТІВ </SheetClose></Links></li>
                         <li><Links href='/gallery' > <SheetClose > ГАЛЕРЕЯ </SheetClose></Links></li>
                         <li><Links href='/contacts' > <SheetClose > КОНТАКТИ </SheetClose></Links></li>
                     </ul>
-                    <ul className="flex items-center justify-center gap-6 mt-32 bg-black "                >
+                    <ul className="flex items-center justify-center gap-6 mt-32  "                >
                         <li><a href="https://www.facebook.com/groups/173982049938109/user/100063204370759/"
                             target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
                         ><SheetClose ><FaYoutube className='w-6 h-6' /></SheetClose></a></li>
                     </ul>
-                    <ul className="flex flex-col items-center gap-4 mt-4 bg-black "                >
+                    <ul className="flex flex-col items-center gap-4 mt-4  "                >
 
                         <li><a href="mailto:rocknaseli@ukr.net"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"

@@ -9,9 +9,10 @@ module.exports = {
   ],
   theme: {
     colors: {
+      linkColor: "#b0cce5",
       textColor: "#e2e8f0",
       burgerColor: "#f1f5f9",
-      backgroundBurger: "#18181b",
+      backgroundBurger: "#00000036",
       backgroundMain: "#262626",
       activeLink: " #ea580c",
       hoverColor: "#fb923c",
