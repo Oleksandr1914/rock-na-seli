@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet"
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
-import { FaFacebook, FaYoutube } from "react-icons/fa6";
+import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa6";
 
 
 export default function Header(): JSX.Element {
@@ -61,5 +61,3 @@ export default function Header(): JSX.Element {
         </header >
     )
 }
-
-// AIzaSyDTCwF42h0VfVN2PIQIqQEYVitKWeSdAwk
