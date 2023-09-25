@@ -6,7 +6,7 @@ import Kozak from '../../../public/kozak.png';
 
 
 const AnyReactComponent = ({ text }: any) => <div className='flex flex-col items-center'>
-    <Image src={Kozak} alt='' width={48} height={48} />
+    <Image src={Kozak} alt='kozak' width={48} height={48} />
     {text}</div>;
 
 export const GoogleMap = async () => {

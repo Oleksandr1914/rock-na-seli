@@ -1,5 +1,4 @@
 import { GoogleMap } from "@/components/Maps/Maps";
-import { PTag } from "@/components/PTag/PTag";
 import { Title } from "@/components/Title/Title";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa6";
@@ -43,7 +42,7 @@ export default function Contacts() {
 
             <a href="https://www.google.com/maps/place/51%C2%B027'08.5%22N+33%C2%B011'20.2%22E/@51.4523459,33.1863553,17z/data=!3m1!4b1!4m4!3m3!8m2!3d51.4523459!4d33.1889302?hl=uk-UA&entry=ttu"
                 target="_blank"
-                rel="noopener noreferrer" className="text-sm underline text-linkColor font-medium laptop:text-lg">село Алтинівка Сумська область</a>
+                rel="noopener noreferrer" className="text-sm underline text-linkColor font-medium  hover:text-hoverColor focus:text-activeLink hover:transition-all laptop:text-lg">село Алтинівка Сумська область</a>
             <GoogleMap />
         </section>
     )
