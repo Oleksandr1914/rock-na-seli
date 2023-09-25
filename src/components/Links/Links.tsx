@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useSelectedLayoutSegment } from 'next/navigation'
 
-export default function Links({ children, href, size = 'm' }: PLink): JSX.Element {
+export default function Links({ children, href, size = 'm', className }: PLink): JSX.Element {
     const [isActive, setIsActive] = useState<string>('')
     const [isActiveGallery, setIsActiveGallery] = useState<string>('')
     const pathname = usePathname();
     const segment = useSelectedLayoutSegment()
 
-    let className = '';
-    size === "m" ? className = 'font-medium text-xl tracking-wider desktop:text-2xl hover:text-hoverColor focus:text-activeLink hover:transition-all' : className = 'font-normal text-lg tracking-wide mobile:text-xl mobile:tracking-widerhover:text-hoverColor focus:text-activeLink hover:transition-all'
+    let classSize = '';
+    size === "m" ? classSize = 'font-medium text-xl tracking-wider desktop:text-2xl hover:text-hoverColor focus:text-activeLink hover:transition-all' : classSize = 'font-normal text-lg tracking-wide mobile:text-xl mobile:tracking-widerhover:text-hoverColor focus:text-activeLink hover:transition-all'
 
 
     useEffect(() => {
@@ -23,6 +23,6 @@ export default function Links({ children, href, size = 'm' }: PLink): JSX.Elemen
 
 
     return (
-        <Link href={href} className={cn(isActiveGallery, isActive, className)}>{children}</Link>
+        <Link href={href} className={cn(isActiveGallery, isActive, classSize, className)}>{children}</Link>
     )
 }
