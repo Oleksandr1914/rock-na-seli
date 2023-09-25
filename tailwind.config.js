@@ -12,8 +12,12 @@ module.exports = {
       textColor: "#e2e8f0",
       burgerColor: "#f1f5f9",
       backgroundBurger: "#18181b",
+      backgroundMain: "#262626",
       activeLink: " #ea580c",
       hoverColor: "#fb923c",
+      buttonColor: "#d04802",
+      errorColor: "#ec291c",
+      outlineColor: "#909294",
     },
     screens: {
       mobile: "480px",
@@ -29,6 +33,9 @@ module.exports = {
       },
     },
     extend: {
+      translate: {
+        50: "-50%",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
