@@ -20,10 +20,10 @@ export default function Header(): JSX.Element {
             </Link>
             <Sheet>
 
-                <SheetTrigger className="laptop:hidden">
+                <SheetTrigger className="laptop:hidden ">
                     <RxHamburgerMenu className='h-8 w-8' />
                 </SheetTrigger>
-                <SheetContent className="bg-backgroundBurger">
+                <SheetContent className="bg-backgroundBurger overflow-y-scroll">
                     <ul className="flex flex-col items-center gap-4 pt-20  ">
                         <li ><Links href='/' > <SheetClose > ГОЛОВНА </SheetClose></Links></li>
                         <li><Links href='/group' > <SheetClose > ДЛЯ ГУРТІВ </SheetClose></Links></li>
@@ -31,7 +31,7 @@ export default function Header(): JSX.Element {
                         <li><Links href='/contacts' > <SheetClose > КОНТАКТИ </SheetClose></Links></li>
                     </ul>
                     <ul className="flex items-center justify-center gap-6 mt-32  "                >
-                        <li><a href="https://www.facebook.com/groups/173982049938109/user/100063204370759/"
+                        <li><a href="https://ww w.facebook.com/groups/173982049938109/user/100063204370759/"
                             target="_blank"
                             className="font-medium text-xl tracking-wider hover:text-hoverColor focus:text-activeLink hover:transition-all"
                         ><SheetClose><FaFacebook className='w-6 h-6' /></SheetClose></a></li>
