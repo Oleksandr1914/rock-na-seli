@@ -19,6 +19,8 @@ module.exports = {
       buttonColor: "#d04802",
       errorColor: "#ec291c",
       outlineColor: "#909294",
+      roundInfoFirst: "#7f4b02d1",
+      roundInfosecond: "#84441bd1",
     },
     screens: {
       mobile: "480px",
