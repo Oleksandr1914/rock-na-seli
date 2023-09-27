@@ -12,7 +12,22 @@ import {
     FormTextarea,
     FormLabel,
     FormMessage,
+    Select,
+    SelectGroup,
+    SelectValue,
+    SelectTrigger,
+    SelectContent,
+    SelectLabel,
+    SelectItem,
+    SelectSeparator,
 } from "@/components/ui/form"
+// import {
+//     Select,
+//     SelectContent,
+//     SelectItem,
+//     SelectTrigger,
+//     SelectValue,
+// } from "@/components/ui/select"
 import Button from "../Button/Button"
 import Notiflix from 'notiflix';
 import { useAppDispatch, useAppSelector } from "@/hook/hookStore"
@@ -36,7 +51,7 @@ const formSchema = z.object({
     }),
     phone: z.string().refine((value) => /^\+380\s?(\(\d{2,3}\)|\d{2,3})[-.\s]?\d{2,3}[-.\s]?\d{2}[-.\s]?\d{2}$/.test(value), 'Невірно введений номер телефону'),
     styleGroup: z.string().min(3, {
-        message: "Повинно бути не менше 3 символів.",
+        message: "Виберіть стиль.",
     }),
     listOfInstrumentalBend: z.string().min(5, {
         message: "Повинно бути не менше 5 символів.",
@@ -44,7 +59,9 @@ const formSchema = z.object({
     informationGroup: z.string().min(10, {
         message: "Повинно бути не менше 10 символів.",
     }),
-    linksSocialNetworkPage: z.string(),
+    linksSocialNetworkPage: z.string().min(10, {
+        message: "Повинно бути не менше 10 символів.",
+    }),
     linksToBandVideo: z.string(),
 })
 
@@ -163,9 +180,25 @@ export default function FormComponent() {
                     render={({ field }) => (
                         <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[350px]">
                             <FormLabel>Стиль у якому грає гурт</FormLabel>
-                            <FormControl>
-                                <FormInput placeholder="Панк-рок" className="mt-2 " {...field} />
-                            </FormControl>
+                            <Select onValueChange={field.onChange} defaultValue={field.value} >
+                                <FormControl>
+                                    <SelectTrigger className="mt-2 ">
+                                        <SelectValue placeholder="Виберіть стиль" />
+                                    </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                    <SelectItem value="Рок-н-рол">Рок-н-рол</SelectItem>
+                                    <SelectItem value="Блюз-рок">Блюз-рок</SelectItem>
+                                    <SelectItem value="Фолк-рок">Фолк-рок</SelectItem>
+                                    <SelectItem value="Хард-рок">Хард-рок</SelectItem>
+                                    <SelectItem value="Альтернативний">Фльтернативний</SelectItem>
+                                    <SelectItem value="Психоделічний">Психоделічний</SelectItem>
+                                    <SelectItem value="Хеві-метал">Хеві-метал</SelectItem>
+                                    <SelectItem value="Панк-рок">Панк-рок</SelectItem>
+                                    <SelectItem value="Рок-авангард">Рок-авангард</SelectItem>
+                                    <SelectItem value="Нова хвиля">Нова хвиля</SelectItem>
+                                </SelectContent>
+                            </Select>
                             <FormMessage className="text-errorColor" />
                         </FormItem>
                     )}
