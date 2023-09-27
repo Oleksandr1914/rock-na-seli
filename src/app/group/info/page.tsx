@@ -10,7 +10,7 @@ import Stage from '../../../../public/rock-stage.jpg';
 export default function Info() {
 
     return (
-        <section className="flex flex-col px-5 py-6 mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:pt-6 laptop:w-[1024px] leptop:px-10 laptop:py-8 desktop:w-[1280px] desktop:px-14">
+        <section className="flex flex-col px-5 py-6 mobile:pb-8 mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:pt-6 laptop:pb-20 laptop:w-[1024px] leptop:px-10 laptop:py-8 desktop:w-[1280px] desktop:px-14">
             <Links href="/group" className="flex items-center text-linkColor underline">Повернутися до форми <TbArrowBigLeftLinesFilled className='inline-block animate-bounce-right' /></Links>
             <div className="flex flex-col items-center mt-6 gap-4 tablet:flex-row-reverse tablet:gap-8 tablet:mt-20 laptop:gap-[116px] desktop:pl-8 desktop:gap-36">
                 <div>

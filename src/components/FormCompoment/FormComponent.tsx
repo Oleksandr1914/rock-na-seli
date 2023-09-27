@@ -203,7 +203,7 @@ export default function FormComponent() {
                     name="linksSocialNetworkPage"
                     render={({ field }) => (
                         <FormItem className="tablet:w-64 laptop:w-[446px] desktop:w-[530px]">
-                            <FormLabel>Посилання на сторінки соціальних мереж, youtube каналів, сайту гурту
+                            <FormLabel>Посилання на сторінки соціальних мереж, youtube каналів, сайт гурту
                             </FormLabel>
                             <FormControl>
                                 <FormTextarea placeholder="Додати посилання" className="mt-2 " {...field} />

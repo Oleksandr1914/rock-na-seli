@@ -6,7 +6,7 @@ import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa6";
 
 export default function Contacts() {
     return (
-        <section className="px-5 py-2 mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:pt-6 laptop:w-[1024px] leptop:px-10 laptop:pt-5 desktop:w-[1280px] desktop:px-14">
+        <section className="px-5 py-2 pb-6 mobile:pb-11 mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:pt-6 laptop:pb-20 laptop:w-[1024px] leptop:px-10 laptop:pt-5 desktop:w-[1280px] desktop:px-14">
             <div>
                 <Title tag="h2" className="text-center  text-hoverColor">Контакти</Title>
                 <div className="laptop:flex laptop:justify-center laptop:gap-28">
