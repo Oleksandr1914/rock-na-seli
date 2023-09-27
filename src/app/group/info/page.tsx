@@ -15,7 +15,7 @@ export default function Info() {
             <div className="flex flex-col items-center mt-6 gap-4 tablet:flex-row-reverse tablet:gap-8 tablet:mt-20 laptop:gap-[116px] desktop:pl-8 desktop:gap-36">
                 <div>
                     <Title tag="h2" className="mx-auto mb-4 w-[268px] mobile:w-[356px] text-center tablet:w-[300px] desktop:w-[540px]">Положення фестивалю живої музики «Rock на селі»</Title>
-                    <PTag className="text-justify">Фестиваль «Рок на селі» проходить у селі Алтинівка Сумської області Конотопського району з 2003 року. Метою проєкту є створення єдиного творчого простору для розвитку талановитих молодих колективів.</PTag>
+                    <PTag className="text-justify indent-8">Фестиваль «Рок на селі» проходить у селі Алтинівка Сумської області Конотопського району з 2003 року. Метою проєкту є створення єдиного творчого простору для розвитку талановитих молодих колективів.</PTag>
                 </div >
                 <Image src={Kozak} alt='емблема фестивалю' width={240} height={240} className="laptop:w-[300px] laptop:h-[300px] desktop:w-[340px] desktop:h-[340px]" />
             </div>
@@ -54,7 +54,7 @@ export default function Info() {
                 </div>
                 <div className="hidden pt-14 px-14 w-[370px] h-[370px] bg-roundInfoFirst rounded-full laptop:flex laptop:flex-col laptop:items-center ">
                     <Title tag="h3" className="desktop:text-3xl">ДЕ?</Title>
-                    <PTag className="text-justify w-[280px] mt-4 desktop:text-xl">На футбольному полі у
+                    <PTag className="text-justify indent-5 w-[280px] mt-3 desktop:text-xl">На футбольному полі у
                         центрі села Алтинівка, що у
                         Конотопському районі
                         Сумськоїобласті. Ось тут
@@ -68,7 +68,7 @@ export default function Info() {
             <div className="pt-6 flex flex-col items-center laptop:flex-row laptop:gap-16 laptop:pt-10 desktop:gap-20 desktop:pr-8">
                 <div>
                     <Title tag="h3" className="mx-auto mb-2 w-[268px] mobile:w-[356px] text-center   tablet:w-[380px]  desktop:w-[640px]">Як подати заявку?</Title>
-                    <PTag className="text-justify ">Відбір гуртів відбувається на конкурсній основі
+                    <PTag className="text-justify indent-8">Відбір гуртів відбувається на конкурсній основі
                         за відеозаписами. Для участі у фестивалі живої музики «Rock на селі» необхідно заповнити <Links href="/group" className=" text-linkColor underline">форму на сайті.</Links> У разі виникнення додаткових запитань з приводу участі
                         можна звертатися за номером телефону: <a href="tel:+380673257403"
                             className=" text-linkColor underline hover:text-hoverColor focus:text-activeLink hover:transition-all"
@@ -80,7 +80,7 @@ export default function Info() {
                 </div>
                 <div className="hidden pt-11 px-14 w-[370px] h-[370px] bg-roundInfosecond rounded-full laptop:flex laptop:flex-col laptop:items-center ">
                     <Title tag="h3" className="desktop:text-3xl">ВАЖЛИВО!</Title>
-                    <PTag className="text-justify w-[290px] mt-4 desktop:text-xl">Ми є некомерційним
+                    <PTag className="text-justify indent-5 w-[290px] mt-3 desktop:text-xl">Ми є некомерційним
                         проєктом. Діяльність наша
                         полягає в організації та
                         проведенні фестивалю,
