@@ -6,6 +6,7 @@ import { PTag } from "@/components/PTag/PTag";
 import Image from 'next/image';
 import Kozak from '../../../../public/kozak-title.png';
 import Stage from '../../../../public/rock-stage.jpg';
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 
 export default function Info() {
 
@@ -91,6 +92,8 @@ export default function Info() {
                         отримання доходу.</PTag>
                 </div>
             </div>
+            <ScrollToTop />
+
         </section>
     )
 }
