@@ -68,12 +68,22 @@ module.exports = {
             "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
           },
         },
+        long: {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.4",
+          },
+        },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "bounce-left": "bounce-left 1s infinite",
         "bounce-right": "bounce-right 1s infinite",
+        long: "long 4s infinite",
       },
     },
   },
