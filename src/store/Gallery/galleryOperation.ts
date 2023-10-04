@@ -1,5 +1,5 @@
 import { createAsyncThunk, AnyAction } from "@reduxjs/toolkit";
-import { ItemImage } from "./gallery.interface";
+import { ItemImage, NetworkItem } from "./gallery.interface";
 
 export const fetchEighteenList = createAsyncThunk<
   ItemImage[],
@@ -14,8 +14,16 @@ export const fetchEighteenList = createAsyncThunk<
   }
 
   const data = await response.json();
+  const objectData: NetworkItem[] = Object.values(data);
 
-  return Object.values(data);
+  return objectData.map((el) => {
+    return {
+      asset_id: el.asset_id,
+      height: el.height,
+      secure_url: el.secure_url,
+      width: el.width,
+    };
+  });
 });
 
 export const fetchNineteenthList = createAsyncThunk<
@@ -31,8 +39,16 @@ export const fetchNineteenthList = createAsyncThunk<
   }
 
   const data = await response.json();
+  const objectData: NetworkItem[] = Object.values(data);
 
-  return Object.values(data);
+  return objectData.map((el) => {
+    return {
+      asset_id: el.asset_id,
+      height: el.height,
+      secure_url: el.secure_url,
+      width: el.width,
+    };
+  });
 });
 
 export const fetchTwentyFirstList = createAsyncThunk<
@@ -48,8 +64,16 @@ export const fetchTwentyFirstList = createAsyncThunk<
   }
 
   const data = await response.json();
+  const objectData: NetworkItem[] = Object.values(data);
 
-  return Object.values(data);
+  return objectData.map((el) => {
+    return {
+      asset_id: el.asset_id,
+      height: el.height,
+      secure_url: el.secure_url,
+      width: el.width,
+    };
+  });
 });
 
 export function isError(action: AnyAction) {
