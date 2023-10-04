@@ -11,7 +11,7 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import NextJsImage from "./NextJsImage";
+import { NextJsImage, NextJsImageAlbum } from "./NextJsImage";
 import { Bars } from 'react-loader-spinner'
 
 
@@ -61,7 +61,7 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
             visible={true}
         /> </div> :
             < >
-                <PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
+                <PhotoAlbum photos={photos} layout="columns" renderPhoto={NextJsImageAlbum} columns={(containerWidth) => {
                     if (containerWidth < 484) return 2;
                     if (containerWidth < 800) return 3;
                     return 4;
