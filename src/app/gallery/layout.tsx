@@ -1,4 +1,5 @@
 import Links from "@/components/Links/Links";
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 
 
 export default function GalleryLayout({
@@ -21,6 +22,7 @@ export default function GalleryLayout({
 
             </ul>
             {children}
+            <ScrollToTop />
         </div>
     );
 }
