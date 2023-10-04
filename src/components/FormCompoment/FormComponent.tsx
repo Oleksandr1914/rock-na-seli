@@ -191,7 +191,7 @@ export default function FormComponent() {
                                     <SelectItem value="Блюз-рок">Блюз-рок</SelectItem>
                                     <SelectItem value="Фолк-рок">Фолк-рок</SelectItem>
                                     <SelectItem value="Хард-рок">Хард-рок</SelectItem>
-                                    <SelectItem value="Альтернативний">Фльтернативний</SelectItem>
+                                    <SelectItem value="Альтернативний">Альтернативний</SelectItem>
                                     <SelectItem value="Психоделічний">Психоделічний</SelectItem>
                                     <SelectItem value="Хеві-метал">Хеві-метал</SelectItem>
                                     <SelectItem value="Панк-рок">Панк-рок</SelectItem>
