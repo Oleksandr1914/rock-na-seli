@@ -6,6 +6,23 @@ import {
     isImageSlide,
     Slide,
 } from "yet-another-react-lightbox";
+import type { RenderPhotoProps } from "react-photo-album";
+export function NextJsImageAlbum({
+    photo,
+    imageProps: { alt, title, sizes, className, onClick },
+    wrapperStyle,
+}: RenderPhotoProps) {
+    return (
+        <div style={{ ...wrapperStyle, position: "relative" }}>
+            <Image
+                fill
+                src={photo}
+                placeholder={"blurDataURL" in photo ? "blur" : undefined}
+                {...{ alt, title, sizes, className, onClick }}
+            />
+        </div>
+    );
+}
 
 function isNextJsImage(slide: Slide): slide is StaticImageData {
     return (
@@ -16,7 +33,7 @@ function isNextJsImage(slide: Slide): slide is StaticImageData {
 }
 
 
-export default function NextJsImage({
+export function NextJsImage({
     slide,
     rect,
 }: Pick<RenderSlideProps, "slide" | "rect">) {
@@ -41,7 +58,7 @@ export default function NextJsImage({
         <div style={{ position: "relative", width, height }}>
             <Image
                 fill
-                alt=""
+                alt="image rock concert"
                 src={slide}
                 loading="lazy"
                 draggable={false}
