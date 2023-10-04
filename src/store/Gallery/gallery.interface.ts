@@ -1,5 +1,12 @@
 export interface ItemImage {
   asset_id: string;
+  height: number;
+  secure_url: string;
+  width: number;
+}
+
+export interface NetworkItem {
+  asset_id: string;
   bytes: number;
   created_at: string;
   folder: string;
