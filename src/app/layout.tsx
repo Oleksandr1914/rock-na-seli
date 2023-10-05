@@ -10,6 +10,9 @@ const ysabeau = Ysabeau({ subsets: ['cyrillic'] })
 export const metadata: Metadata = {
   title: 'Rock-na-seli',
   description: 'Фестиваль живої музики Рок на селі',
+  icons: {
+    icon: './favicon.ico',
+  },
 }
 
 export default function RootLayout({
