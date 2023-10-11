@@ -44,7 +44,7 @@ export default function Info() {
                     <Title tag="h3" className="mx-auto mb-2 text-center   ">Умови участі:</Title>
                     <ul className="list-disc pl-5">
                         <li><PTag className="text-justify">Участь у фестивалі безкоштовна. Транспортні
-                            витрати за рахунок відряджаючоїорганізації.</PTag></li>
+                            витрати за рахунок відряджаючої організації.</PTag></li>
                         <li><PTag className="text-justify">Тривалість виступу окремого гурту – 20 хвилин (без
                             врахування часу на підключення).</PTag></li>
                         <li><PTag className="text-justify">Обов‘язкова наявність у представленому репертуарі
@@ -58,7 +58,7 @@ export default function Info() {
                     <PTag className="text-justify indent-5 w-[280px] mt-3 desktop:text-xl">На футбольному полі у
                         центрі села Алтинівка, що у
                         Конотопському районі
-                        Сумськоїобласті. Ось тут
+                        Сумської області. Ось тут
                         детальне розташування на
                         google-карті: <a href="https://www.google.com/maps/place/51%C2%B027'08.5%22N+33%C2%B011'20.2%22E/@51.4523459,33.1863553,17z/data=!3m1!4b1!4m4!3m3!8m2!3d51.4523459!4d33.1889302?hl=uk-UA&entry=ttu"
                             target="_blank"
