@@ -53,7 +53,7 @@ export default function Gallery({ children, year }: PGallery): JSX.Element {
 
 
     return <section className="py-6 tablet:pt-8 laptop:pt-11">
-        {loading ? <div className="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"> <Bars
+        {loading && photos.length < 1 ? <div className="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"> <Bars
             height="140"
             width="140"
             color="#ea580cbd"

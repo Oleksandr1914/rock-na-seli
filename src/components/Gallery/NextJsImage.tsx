@@ -7,6 +7,7 @@ import {
     Slide,
 } from "yet-another-react-lightbox";
 import type { RenderPhotoProps } from "react-photo-album";
+
 export function NextJsImageAlbum({
     photo,
     imageProps: { alt, title, sizes, className, onClick },
