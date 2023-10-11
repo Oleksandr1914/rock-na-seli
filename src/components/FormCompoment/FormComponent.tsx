@@ -197,6 +197,7 @@ export default function FormComponent() {
                                     <SelectItem value="Панк-рок">Панк-рок</SelectItem>
                                     <SelectItem value="Рок-авангард">Рок-авангард</SelectItem>
                                     <SelectItem value="Нова хвиля">Нова хвиля</SelectItem>
+                                    <SelectItem value="Інший стиль">Інший стиль</SelectItem>
                                 </SelectContent>
                             </Select>
                             <FormMessage className="text-errorColor" />
